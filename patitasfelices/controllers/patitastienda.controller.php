@@ -22,7 +22,11 @@ class StoreController{
         $this->view->showAllProducts($products);
     }
 
-    public function showTable(){
-        $this->view->shoTable();
+    public function mostrarDetalles(){
+        $this->view->mostrarDetalles();
+    }
+
+    public function showOtraTabla(){
+        $this->view->showAnotherTable();
     }
 }

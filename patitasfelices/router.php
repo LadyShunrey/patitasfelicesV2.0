@@ -18,8 +18,15 @@ $controller = new StoreController();
 switch($params[0]){
     case 'home':
         $controller->showHome();
+        break;
+    case 'mostrarTabla':
         $controller->showAllProducts();
-        $controller->showTable();
+        break;
+    case 'mostrarOtraTabla':
+        $controller->showOtraTabla();
+        break;
+    case 'mostrarDetalles':
+        $controller->mostrarDetalles();
         break;
     default:
         echo'404 - Página no encontrada';
