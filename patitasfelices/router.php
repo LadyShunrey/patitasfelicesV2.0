@@ -19,6 +19,7 @@ switch($params[0]){
     case 'home':
         $controller->showHome();
         $controller->showAllProducts();
+        $controller->showTable();
         break;
     default:
         echo'404 - Página no encontrada';

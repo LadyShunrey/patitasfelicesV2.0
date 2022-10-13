@@ -21,4 +21,8 @@ class StoreController{
         $products = $this->model->getAllProducts();
         $this->view->showAllProducts($products);
     }
+
+    public function showTable(){
+        $this->view->shoTable();
+    }
 }

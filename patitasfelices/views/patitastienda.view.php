@@ -15,4 +15,8 @@ class StoreView{
         }
         echo'</ul>';
     }
+
+    function shoTable(){
+
+    }
 }
