@@ -1,6 +1,6 @@
-<h4> Y... chau!! </h4>
+<h4> Y... chau!! porque este es el footer </h4>
 
-<script src="../js/modal.js"></script>
+
 </body>
 
 </html>

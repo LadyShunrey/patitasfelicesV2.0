@@ -4,18 +4,19 @@
 
 <div class="container">
     <ul>
-        <li>ID: {$product->id_product}</li>
         <li>Nombre: {$product->name}</li>
-        <li>{$product->description}</li>
-        <li>{$product->color}</li>
-        <li>{$product->size}</li>
-        <li>{$product->price}</li>
-        <li>{$product->stock}</li>
-        <li>{$product->category_fk}</li>
-        <li>{$product->type_fk}</li>
+        <li>Descripción: {$product->description}</li>
+        <li>Color: {$product->color}</li>
+        <li>Tamaño: {$product->size}</li>
+        <li>Precio: {$product->price}</li>
+        <li>Stock: {$product->stock}</li>
+        <li>Categoría: {$product->category_fk}</li>
+        <li>Tipo de producto: {$product->type_fk}</li>
     </ul>
 </div>
 
 <h4> Holis que tal soy el detalle </h4>
-<button><a href="adminTable"> VOLVER </a></button>
+<button><a href="showAllProducts"> VOLVER </a></button>
+<button><a href="adminTable"> VOLVER a la tabla admin </a></button>
+
 {include file="templates/footer.tpl"}

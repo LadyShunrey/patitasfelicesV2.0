@@ -40,31 +40,50 @@
 		{/foreach}
 	</tbody>
 </table>
+
+<h2>Todas las categorias de nuestra tienda </h2>
+
+<td><button><a href="newCategory"> AGREGAR UNA CATEGORÍA NUEVA! </a></button></td>
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Categoría: </th>
+			<th scope="col">Acciones</th>
+		</tr>
+	</thead>
+	<tbody>
+		{foreach from=$categories item=$category}
+			<tr>
+				<th scope="row">{$category->category_name}</th>
+				<td><button><a href="editCategory/{$category->id_category}"> EDITAR </a></button> --- <button class='btn btn-danger'> <a href='deleteCategory/{$category->id_category}'> BORRAR </a></button></td>
+				<td><button><a href="productsByCategory/{$category->id_category}"> Ver productos de esta categoría </a></button></td>
+			</tr>
+		{/foreach}
+	</tbody>
+</table>
+
+<h2>Todas las categorias de nuestra tienda </h2>
+
+<td><button><a href="newType"> AGREGAR UN NUEVO TIPO DE PRODUCTO! </a></button></td>
+<table class="table">
+	<thead>
+		<tr>
+			<th scope="col">Tipo de Producto: </th>
+			<th scope="col">Acciones</th>
+		</tr>
+	</thead>
+	<tbody>
+		{foreach from=$types item=$type}
+			<tr>
+				<th scope="row">{$type->type_name}</th>
+				<td><button><a href="editType/{$type->id_type}"> EDITAR </a></button> --- <button class='btn btn-danger'> <a href='deleteType/{$type->id_type}'> BORRAR </a></button></td>
+				<td><button><a href="productsByType/{$type->id_type}"> Ver productos de este tipo </a></button></td>
+			</tr>
+		{/foreach}
+	</tbody>
+</table>
+
 <button><a href="home"> VOLVER </a></button>
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 {include file="templates/footer.tpl"}
 

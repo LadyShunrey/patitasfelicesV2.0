@@ -14,8 +14,15 @@ class StoreView{
         $this->smarty->display('templates/home.tpl');
     }
 
-    function showAdminTable($products){
+    function showAllProducts($products){
         $this->smarty->assign('products', $products);
+        $this->smarty->display('templates/showAllProducts.tpl');
+    }
+
+    function showAdminTable($products, $categories, $types){
+        $this->smarty->assign('products', $products);
+        $this->smarty->assign('categories', $categories);
+        $this->smarty->assign('types', $types);
         $this->smarty->display('templates/adminTable.tpl');
     }
 
@@ -35,6 +42,29 @@ class StoreView{
 
     function showHomeLocation(){
         header("Location: " . BASE_URL. "home");
+    }
+
+    function showCategories($categories){
+        $this->smarty->assign('categories', $categories);
+        $this->smarty->display('templates/showCategories.tpl');
+    }
+
+    function newCategory(){
+        $this->smarty->display('templates/newCategory.tpl');
+    }
+
+    function editCategory($category){
+        $this->smarty->assign('category', $category);
+        $this->smarty->display('templates/editCategory.tpl');
+    }
+
+    public function newType(){
+        $this->smarty->display('templates/newType.tpl');
+    }
+
+    function editType($type){
+        $this->smarty->assign('type', $type);
+        $this->smarty->display('templates/editType.tpl');
     }
 
 }

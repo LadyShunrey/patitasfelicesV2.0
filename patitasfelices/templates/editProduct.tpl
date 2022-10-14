@@ -23,7 +23,7 @@
     <div class="row">
         <div class="col-9">
             <div class="form-group">
-                <label>Nombre del producto nuevo</label>
+                <label>Nombre del producto que quiere modificar</label>
                 <input name="name" type="text" class="form-control" value="{$product->name}"/>
             </div>
         </div>

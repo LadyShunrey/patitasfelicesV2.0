@@ -19,7 +19,7 @@ switch($params[0]){
     case 'home':
         $controller->showHome();
         break;
-    case 'mostrarTabla':
+    case 'showAllProducts':
         $controller->showAllProducts();
         break;
     case 'adminTable':
@@ -43,7 +43,40 @@ switch($params[0]){
     case 'deleteProduct':
         $controller->deleteProduct($params[1]);
         break;
+    case 'showCategories':
+        $controller->showCategories();
+        break;
+    case 'productsByCategory':
+        $controller->productsByCategory($params[1]);
+        break;
+    case 'newCategory':
+        $controller->newCategory();
+        break;
+    case 'addCategory':
+        $controller->addCategory();
+        break;
+    case 'editCategory':
+        $controller->editCategory($params[1]);
+        break;
+    case 'editCategoryOnDB':
+        $controller->editCategoryOnDB($params[1]);
+        break;
+    case 'deleteCategory':
+        $controller->deleteCategory();
+        break;
+    case 'newType':
+        $controller->newType();
+        break;
+    case 'addType':
+        $controller->addType();
+        break;
+    case 'editType':
+        $controller->editType($params[1]);
+        break;
+    case 'editTypeOnDB':
+        $controller->editTypeOnDB($params[1]);
+        break;
     default:
-        echo'404 - Página no encontrada';
+echo'404 - Página no encontrada';
         break;
 }
