@@ -28,6 +28,11 @@ class StoreView{
         $this->smarty->display('templates/productDetails.tpl');
     }
 
+    function editProduct($product){
+        $this->smarty->assign('product', $product);
+        $this->smarty->display('templates/editProduct.tpl');
+    }
+
     function showHomeLocation(){
         header("Location: " . BASE_URL. "home");
     }

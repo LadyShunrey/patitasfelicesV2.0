@@ -34,6 +34,15 @@ switch($params[0]){
     case 'addProduct':
         $controller->addProduct();
         break;
+    case 'editProduct':
+        $controller->editProduct($params[1]);
+        break;
+    case 'editProductOnDB':
+        $controller->editProductOnDB($params[1]);
+        break;
+    case 'deleteProduct':
+        $controller->deleteProduct($params[1]);
+        break;
     default:
         echo'404 - Página no encontrada';
         break;

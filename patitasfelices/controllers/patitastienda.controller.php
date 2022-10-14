@@ -29,7 +29,6 @@ class StoreController{
 
     public function newProduct(){
         $this->view->newProduct();
-        // $this->model
     }
 
     public function addProduct(){
@@ -44,6 +43,30 @@ class StoreController{
 
         $this->model->addProduct($name, $description, $color, $size, $price, $stock, $category_fk, $type_fk);
 
-        header("Location: " . BASE_URL);
+        $this->showAdminTable();
+    }
+
+    public function editProduct($id){
+        $product = $this->model->getProduct($id);
+        $this->view->editProduct($product);
+    }
+
+    public function editProductOnDB($id){
+        $name = $_REQUEST['name'];
+        $description = $_REQUEST['description'];
+        $color = $_REQUEST['color'];
+        $size = $_REQUEST['size'];
+        $price = $_REQUEST['price'];
+        $stock = $_REQUEST['stock'];
+        $category_fk = $_REQUEST['category_fk'];
+        $type_fk = $_REQUEST['type_fk'];
+
+        $this->model->editProduct($id, $name, $description, $color, $size, $price, $stock, $category_fk, $type_fk);
+        $this->editProduct($id);
+    }
+
+    public function deleteProduct($id){
+        $product = $this->model->deleteProduct($id);
+        $this->showAdminTable();
     }
 }

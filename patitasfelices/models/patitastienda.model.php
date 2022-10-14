@@ -27,4 +27,17 @@ class StoreModel{
 
         return $this->db->lastInsertId();
     }
+
+
+    //NO ME ESTA SALIENDO EL DE EDITAR :c
+    function editProduct($id, $name, $description, $color, $size, $price, $stock, $category_fk, $type_fk){
+        $query = $this->db->prepare('UPDATE product SET name = ?, description = ?, color = ?, size = ?, price = ?, stock = ?, category_fk = ?, type_fk = ? WHERE product.id_product = ?');
+        $query->execute([$name, $description, $color, $size, $price, $stock, $category_fk, $type_fk, $id]);
+
+    }
+
+    function deleteProduct($id){
+        $query = $this->db->prepare('DELETE FROM `product` WHERE `product`.`id_product` = ?');
+        $query->execute([$id]);
+    }
 }
