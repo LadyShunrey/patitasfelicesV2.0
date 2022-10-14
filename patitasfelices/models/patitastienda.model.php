@@ -13,4 +13,18 @@ class StoreModel{
         $products = $query->fetchAll(PDO::FETCH_OBJ);
         return $products;
     }
+
+    function getProduct($id){
+        $query = $this->db->prepare('SELECT * FROM product WHERE product.id_product=?');
+        $query->execute([$id]);
+        $product = $query->fetch(PDO::FETCH_OBJ);
+        return $product;
+    }
+
+    function addProduct($name, $description, $color, $size, $price, $stock, $category_fk, $type_fk){
+        $query = $this->db->prepare('INSERT INTO product(name, description, color, size, price, stock, category_fk, type_fk) VALUES(?, ?, ?, ?, ?, ?, ?, ?)');
+        $query->execute([$name, $description, $color, $size, $price, $stock, $category_fk, $type_fk]);
+
+        return $this->db->lastInsertId();
+    }
 }

@@ -17,16 +17,33 @@ class StoreController{
         $this->view->showHome();
     }
 
-    public function showAllProducts(){
+    public function productDetails($id){
+        $product = $this->model->getProduct($id);
+        $this->view->productDetails($product);
+    }
+
+    public function showAdminTable(){
         $products = $this->model->getAllProducts();
-        $this->view->showAllProducts($products);
+        $this->view->showAdminTable($products);
     }
 
-    public function mostrarDetalles(){
-        $this->view->mostrarDetalles();
+    public function newProduct(){
+        $this->view->newProduct();
+        // $this->model
     }
 
-    public function showOtraTabla(){
-        $this->view->showAnotherTable();
+    public function addProduct(){
+        $name = $_REQUEST['name'];
+        $description = $_REQUEST['description'];
+        $color = $_REQUEST['color'];
+        $size = $_REQUEST['size'];
+        $price = $_REQUEST['price'];
+        $stock = $_REQUEST['stock'];
+        $category_fk = $_REQUEST['category_fk'];
+        $type_fk = $_REQUEST['type_fk'];
+
+        $this->model->addProduct($name, $description, $color, $size, $price, $stock, $category_fk, $type_fk);
+
+        header("Location: " . BASE_URL);
     }
 }

@@ -14,24 +14,18 @@ class StoreView{
         $this->smarty->display('templates/home.tpl');
     }
 
-    function showAllProducts($products){
-        echo "hola! acá listo todos los productos de nuestra tienda";
-        
-        echo'<ul class="list-group mt-5">';
-        foreach($products as $product){
-                echo "<li>$product->name - $product->price - </li>";
-        }
-        echo'</ul>';
-
-        echo '<button><a href="home"> VOLVER </a></button>';
-    }
-
-    function showAnotherTable(){
+    function showAdminTable($products){
+        $this->smarty->assign('products', $products);
         $this->smarty->display('templates/adminTable.tpl');
     }
 
-    function mostrarDetalles(){
-        $this->smarty->display('templates/detallesProducto.tpl');
+    function newProduct(){
+        $this->smarty->display('templates/newProduct.tpl');
+    }
+
+    function productDetails($product){
+        $this->smarty->assign('product', $product);
+        $this->smarty->display('templates/productDetails.tpl');
     }
 
     function showHomeLocation(){

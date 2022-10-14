@@ -22,11 +22,17 @@ switch($params[0]){
     case 'mostrarTabla':
         $controller->showAllProducts();
         break;
-    case 'mostrarOtraTabla':
-        $controller->showOtraTabla();
+    case 'adminTable':
+        $controller->showAdminTable();
         break;
-    case 'mostrarDetalles':
-        $controller->mostrarDetalles();
+    case 'productDetails':
+        $controller->productDetails($params[1]);
+        break;
+    case 'newProduct':
+        $controller->newProduct();
+        break;
+    case 'addProduct':
+        $controller->addProduct();
         break;
     default:
         echo'404 - Página no encontrada';

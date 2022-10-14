@@ -10,4 +10,4 @@
 </head>
 <body>
     <header>este es mi humilde header D:</header>
-    <h1>Hello World!!!</h1>
+    <h1>Esto sería un nav!!!</h1>
