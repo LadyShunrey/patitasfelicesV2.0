@@ -31,7 +31,7 @@
 				<td>{$product->category_fk}</td>
 				<td>{$product->type_fk}</td>
 				<td>{$product->image}</td>
-				<td><button><a href="productDetails/{$product->id_product}"> VER EL PRODUCTO </a></button></td>
+				<td><button><a href="productDetails/{$product->id_product}/{$product->name}"> VER EL PRODUCTO </a></button></td>
 			</tr>
 		{/foreach}
 	</tbody>

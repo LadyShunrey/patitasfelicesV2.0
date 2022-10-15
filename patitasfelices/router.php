@@ -26,7 +26,7 @@ switch($params[0]){
         $controller->showAdminTable();
         break;
     case 'productDetails':
-        $controller->productDetails($params[1]);
+        $controller->productDetails($params[1], $params[2]);
         break;
     case 'newProduct':
         $controller->newProduct();

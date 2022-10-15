@@ -22,9 +22,10 @@ class StoreController{
         $this->view->showAllProducts($products);
     }
 
-    public function productDetails($id){
+    public function productDetails($id, $name){
         $product = $this->model->getProduct($id);
-        $this->view->productDetails($product);
+        
+        $this->view->productDetails($product, $name);
     }
 
     public function showAdminTable(){
