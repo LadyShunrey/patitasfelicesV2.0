@@ -1,6 +1,7 @@
 <?php
 
 require_once('controllers/patitastienda.controller.php');
+require_once('controllers/auth.controller.php');
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -14,10 +15,14 @@ else{
 $params = explode('/', $action);
 
 $controller = new StoreController();
+$authController = new AuthController();
 
 switch($params[0]){
     case 'home':
         $controller->showHome();
+        break;
+    case 'login':
+        $authController->showLogin();
         break;
     case 'showAllProducts':
         $controller->showAllProducts();
