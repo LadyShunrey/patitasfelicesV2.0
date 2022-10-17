@@ -58,6 +58,7 @@ class ProductController{
         $stock = $_REQUEST['stock'];
         $category_fk = $_REQUEST['category_fk'];
         $type_fk = $_REQUEST['type_fk'];
+        
 
         $this->model->addProduct($name, $description, $color, $size, $price, $stock, $category_fk, $type_fk);
 
@@ -66,7 +67,11 @@ class ProductController{
 
     public function editProduct($id){
         $product = $this->model->getProduct($id);
-        $this->view->editProduct($product);
+        $modelCategory = new CategoryModel();
+        $modelType = new TypeModel();
+        $categories = $modelCategory->getAllCategories();
+        $types = $modelType->getAllTypes();
+        $this->view->editProduct($product, $categories, $types);
     }
 
     public function editProductOnDB($id){

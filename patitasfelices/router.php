@@ -47,18 +47,20 @@ switch($params[0]){
         break;
     case 'backoffice':
         $authController->showBackoffice();
-        break;
-    case 'backoffice-productos':
-        $productController = new ProductController();
-        $productController->showBackofficeProducts();
-        break;
-    case 'backoffice-categorias':
-        $categoryController = new CategoryController();
-        $categoryController->showBackofficeCategories();
-        break;
-    case 'backoffice-tipos':
-        $typeController = new TypeController();
-        $typeController->showBackofficeTypes();
+        switch($params[1]){
+            case 'productos':
+                $productController = new ProductController();
+                $productController->showBackofficeProducts();
+                break;
+            case 'categorias':
+                $categoryController = new CategoryController();
+                $categoryController->showBackofficeCategories();
+                break;
+            case 'tipos':
+                $typeController = new TypeController();
+                $typeController->showBackofficeTypes();
+                break;
+        }
         break;
     case 'product-details':
         $productController = new ProductController();
@@ -110,7 +112,7 @@ switch($params[0]){
         break;
     case 'deleteCategory':
         $categoryController = new CategoryController();
-        $categoryController->deleteCategory();
+        $categoryController->deleteCategory($params[1]);
         break;
     case 'newType':
         $typeController = new TypeController();
@@ -127,6 +129,10 @@ switch($params[0]){
     case 'editTypeOnDB':
         $typeController = new TypeController();
         $typeController->editTypeOnDB($params[1]);
+        break;
+    case 'deleteType':
+        $typeController = new TypeController();
+        $typeController->deleteType($params[1]);
         break;
     default:
 echo'404 - Página no encontrada';

@@ -1,9 +1,8 @@
 {include file="templates/header.tpl"}
 
 <h4>Bienvenidos a nuestra tienda </h4>
-<h4>hola! acá listo todos los productos de nuestra tienda</h4>
 
-<h1>Todos nuestros productos!</h1>
+<h1>Estos son todos nuestros productos!</h1>
 
 <table class="table">
 	<thead>
@@ -30,7 +29,7 @@
 				<td>{$product->stock}</td>
 				<td>{$product->category_name}</td>
 				<td>{$product->type_name}</td>
-				<td>{$product->image}</td>
+				<td><img src="images/{$product->image}" alt=""></td>
 				<td><button><a href="product-details/{$product->id_product}/{$product->name}"> VER EL PRODUCTO </a></button></td>
 			</tr>
 		{/foreach}

@@ -15,7 +15,7 @@ class ProductModel{
     }
 
     function getProduct($id){
-        $query = $this->db->prepare('SELECT * FROM product WHERE product.id_product=?');
+        $query = $this->db->prepare('SELECT id_product, name, description, category_name, type_name, color, size, price, stock, image FROM product, category, type WHERE product.id_product=? AND (category_fk= id_category AND type_fk=id_type)');
         $query->execute([$id]);
         $product = $query->fetch(PDO::FETCH_OBJ);
         return $product;

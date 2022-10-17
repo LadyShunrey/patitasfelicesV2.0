@@ -14,8 +14,8 @@
         <li>Tamaño: {$product->size}</li>
         <li>Precio: {$product->price}</li>
         <li>Stock: {$product->stock}</li>
-        <li>Categoría: {$product->category_fk}</li>
-        <li>Tipo: {$product->type_fk}</li>
+        <li>Categoría: {$product->category_name}</li>
+        <li>Tipo: {$product->type_name}</li>
     </ul>
 </div>
 
@@ -38,29 +38,20 @@
         <div class="col-3">
             <div class="form-group">
                 <label>Categoría a la que pertenece</label>
-                <select name="category_fk" class="form-control" value="{$product->category_fk}">
+                <select name="category_fk" class="form-control">
                     {foreach from=$categories item=$category}
-                        <option value="{$category->id_category}">{$category->category_name}</option>
+                    <option {if $product->category_name == $category->category_name} selected {/if}value="{$category->id_category}">{$category->category_name}</option>
                     {{/foreach}}
+                    </div>
                 </select>
-            </div>
         </div>
         <div class="col-3">
             <div class="form-group">
                 <label>Tipo de producto</label>
-                <select name="type_fk" class="form-control" value="{$product->type_fk}">
-                    <option value="1">Bandanas</option>
-                    <option value="2">Cartucheras</option>
-                    <option value="3">Llaveros</option>
-                    <option value="4">Anotadores</option>
-                    <option value="5">Calendarios</option>
-                    <option value="6">Cuadernos</option>
-                    <option value="7">Lápices</option>
-                    <option value="8">Lapiceras</option>
-                    <option value="9">Bolsos</option>
-                    <option value="10">Tazas</option>
-                    <option value="11">Remeras</option>
-                    <option value="12">Billeteras</option>
+                <select name="type_fk" class="form-control">
+                    {foreach from=$types item=$type}
+                        <option {if $product->type_name == $type->type_name} selected {/if} value="{$type->id_type}">{$type->type_name}</option>
+                    {{/foreach}}
                 </select>
             </div>
         </div>

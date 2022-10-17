@@ -72,7 +72,7 @@
     <input type="checkbox" name="completada" id="completada">
 
     <label>AGREGAR UNA IMAGEN</label>
-    <input type="file" name="image" id="image">
+    <input type="file" name="image" id="imageToUpload">
 
     <button type="submit" class="btn btn-primary mt-2">Guardar</button>
 </form>
