@@ -23,10 +23,12 @@ class TypeController{
     }
 
     public function newType(){
+        $this->authHelper->checkLoggedIn();
         $this->view->newType();
     }
 
     public function addType(){
+        $this->authHelper->checkLoggedIn();
         $type_name = $_REQUEST['type_name'];
         $this->model->addType($type_name);
 
@@ -34,11 +36,13 @@ class TypeController{
     }
 
     public function editType($id_type){
+        $this->authHelper->checkLoggedIn();
         $type = $this->model->getType($id_type);
         $this->view->editType($type);
     }
 
     public function editTypeOnDB($id_type){
+        $this->authHelper->checkLoggedIn();
         $type_name = $_REQUEST['type_name'];
 
         $this->model->editType($id_type, $type_name);
@@ -46,6 +50,7 @@ class TypeController{
     }
 
     public function deleteType($id_type){
+        $this->authHelper->checkLoggedIn();
         $this->model->deleteType($id_type);
         $this->showBackofficeTypes();
     }

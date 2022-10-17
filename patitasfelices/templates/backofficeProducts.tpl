@@ -1,3 +1,8 @@
+{include file="templates/header.tpl"}
+
+<button><a href="backoffice">Volver el panel de administrador</a></button>
+<button><a href="backoffice/categorias">CATEGORÍAS</a></button>
+<button><a href="backoffice/tipos">TIPOS</a></button>
 
 <h1>Esta es el area de GESTION de todos los PRODUCTOS de la tienda </h1>
 
@@ -33,7 +38,7 @@
 				<td>{$product->type_name}</td>
 				<td>{$product->image}</td>
 				<td><button><a href="editProduct/{$product->id_product}"> EDITAR </a></button> --- <button type="button" class="btn btn -primary btn-danger" data-bs-toggle="modal" data-bs-target="#deleteProduct">BORRAR</button></td>
-				<td><button><a href="product-details/{$product->id_product}"> VER EL PRODUCTO </a></button></td>
+				<td><button><a href="backoffice/productos/detalle/{$product->id_product}/{$product->name}"> VER EL PRODUCTO </a></button></td>
 			</tr>
 		{/foreach}
 	</tbody>
@@ -41,8 +46,8 @@
 
 <button><a href="backoffice"> VOLVER </a></button>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn -primary btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">BORRAR</button>
+{* <!-- Button trigger modal -->
+<button type="button" class="btn btn -primary btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">BORRAR</button> *}
 
 <!-- Modal -->
 <div class="modal fade" id="deleteProduct" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -6,11 +6,13 @@ class AuthController
 {
     private $view;
     private $model;
+    private $authHelper;
 
     public function __construct()
     {
         $this->model = new UserModel();
         $this->view = new AuthView();
+        $this->authHelper = new AuthHelper();
     }
 
     public function showLogin()
@@ -53,6 +55,7 @@ class AuthController
     }
 
     public function showBackoffice(){
+        $this->authHelper->checkLoggedIn();
         $this->view->showBackoffice();
     }
 }

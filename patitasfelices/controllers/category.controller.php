@@ -32,10 +32,12 @@ class CategoryController{
     }
 
     public function newCategory(){
+        $this->authHelper->checkLoggedIn();
         $this->view->newCategory();
     }
 
     public function addCategory(){
+        $this->authHelper->checkLoggedIn();
         $category_name = $_REQUEST['category_name'];
         $this->model->addCategory($category_name);
 
@@ -43,11 +45,13 @@ class CategoryController{
     }
 
     public function editCategory($id_category){
+        $this->authHelper->checkLoggedIn();
         $category = $this->model->getCategory($id_category);
         $this->view->editCategory($category);
     }
 
     public function editCategoryOnDB($id_category){
+        $this->authHelper->checkLoggedIn();
         $category_name = $_REQUEST['category_name'];
 
         $this->model->editCategory($id_category, $category_name);
@@ -55,6 +59,7 @@ class CategoryController{
     }
 
     public function deleteCategory($id_category){
+        $this->authHelper->checkLoggedIn();
         $this->model->deleteCategory($id_category);
         $this->showBackofficeCategories();
     }

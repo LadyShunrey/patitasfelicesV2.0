@@ -14,6 +14,8 @@ class ProductController{
         $this->model = new ProductModel();
         $this->view = new ProductView();
         $this->authHelper = new AuthHelper();
+
+        $this->authHelper->openSession();
     }
 
     public function showHome(){
@@ -42,6 +44,7 @@ class ProductController{
     }
 
     public function newProduct(){
+        $this->authHelper->checkLoggedIn();
         $modelCategory = new CategoryModel();
         $modelType = new TypeModel();
         $categories = $modelCategory->getAllCategories();
@@ -50,6 +53,7 @@ class ProductController{
     }
 
     public function addProduct(){
+        $this->authHelper->checkLoggedIn();
         $name = $_REQUEST['name'];
         $description = $_REQUEST['description'];
         $color = $_REQUEST['color'];
@@ -58,7 +62,7 @@ class ProductController{
         $stock = $_REQUEST['stock'];
         $category_fk = $_REQUEST['category_fk'];
         $type_fk = $_REQUEST['type_fk'];
-        
+
 
         $this->model->addProduct($name, $description, $color, $size, $price, $stock, $category_fk, $type_fk);
 
@@ -66,6 +70,7 @@ class ProductController{
     }
 
     public function editProduct($id){
+        $this->authHelper->checkLoggedIn();
         $product = $this->model->getProduct($id);
         $modelCategory = new CategoryModel();
         $modelType = new TypeModel();
@@ -75,6 +80,7 @@ class ProductController{
     }
 
     public function editProductOnDB($id){
+        $this->authHelper->checkLoggedIn();
         $name = $_REQUEST['name'];
         $description = $_REQUEST['description'];
         $color = $_REQUEST['color'];
@@ -89,6 +95,7 @@ class ProductController{
     }
 
     public function deleteProduct($id){
+        $this->authHelper->checkLoggedIn();
         $this->model->deleteProduct($id);
         $this->showBackofficeProducts();
     }

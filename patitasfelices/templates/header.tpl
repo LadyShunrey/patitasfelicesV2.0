@@ -28,21 +28,6 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="home">Home</a>
                     </li>
-                    <li class="nav-item">
-                            {if isset($smarty.session.USER_ID)}
-                                <a class="nav-link active" aria-current="page" href="backoffice">Gestionar productos</a>
-                                <a class="nav-link active" aria-current="page" href="logout">{($smarty.session.USER_NAME)} Logout</a>
-                            
-                            {else}
-                                <a class="nav-link active" aria-current="page" href="login">Ingresar</a>
-                            {/if}
-                        </li>
-                    {* <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li> *}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -54,6 +39,27 @@
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        {if isset($smarty.session.USER_ID)}
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="backoffice">Gestionar productos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="logout">{($smarty.session.USER_NAME)} Logout</a>
+                            </li>
+                            
+                            
+                        
+                        {else}
+                            <a class="nav-link active" aria-current="page" href="login">Ingresar</a>
+                        {/if}
+                    </li>
+                    {* <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li> *}
                 </ul>
             </div>
         </div>

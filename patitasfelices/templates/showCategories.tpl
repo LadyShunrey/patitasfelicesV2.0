@@ -21,6 +21,6 @@
 
 <button><a href="showCategories"> Ver todas las categorías </a></button>
 
-<button><a href="showAllProducts"> VOLVER </a></button>
+<button><a href="tienda"> VOLVER </a></button>
 
 {include file="templates/footer.tpl"}

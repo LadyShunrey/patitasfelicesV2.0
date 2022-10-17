@@ -30,13 +30,13 @@
 				<td>{$product->category_name}</td>
 				<td>{$product->type_name}</td>
 				<td><img src="images/{$product->image}" alt=""></td>
-				<td><button><a href="product-details/{$product->id_product}/{$product->name}"> VER EL PRODUCTO </a></button></td>
+				<td><button><a href="tienda/product/{$product->id_product}/{$product->name}"> VER EL PRODUCTO </a></button></td>
 			</tr>
 		{/foreach}
 	</tbody>
 </table>
 
-<button><a href="showCategories"> Ver todas las categorías </a></button>
+<button><a href="tienda/categorias"> Ver todas las categorías </a></button>
 
 <button><a href="home"> VOLVER </a></button>
 

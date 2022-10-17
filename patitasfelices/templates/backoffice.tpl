@@ -7,3 +7,5 @@
 <button><a href="backoffice/productos">PRODUCTOS</a></button>
 <button><a href="backoffice/categorias">CATEGORÍAS</a></button>
 <button><a href="backoffice/tipos">TIPOS</a></button>
+
+{include file="templates/footer.tpl"}

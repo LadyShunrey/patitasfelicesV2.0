@@ -1,3 +1,8 @@
+{include file="templates/header.tpl"}
+
+<button><a href="backoffice">Volver el panel de administrador</a></button>
+<button><a href="backoffice/productos">PRODUCTOS</a></button>
+<button><a href="backoffice/tipos">TIPOS</a></button>
 
 <h1>Esta es el area de GESTION de todas las CATEGORÍAS de la tienda </h1>
 
@@ -22,8 +27,8 @@
 
 <button><a href="backoffice"> VOLVER </a></button>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn -primary btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">BORRAR</button>
+{* <!-- Button trigger modal -->
+<button type="button" class="btn btn -primary btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">BORRAR</button> *}
 
 <!-- Modal -->
 <div class="modal fade" id="borrar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -42,15 +42,37 @@ switch($params[0]){
         $authController->logout();
         break;
     case 'tienda':
-        $productController = new ProductController();
-        $productController->showAllProducts();
+        switch($params[1] ?? ""){
+            case '':
+                $productController = new ProductController();
+                $productController->showAllProducts();
+                break;
+            case 'categorias':
+                $categoryController = new CategoryController();
+                $categoryController->showCategories();
+                break;
+            case 'product':
+                $productController = new ProductController();
+                $productController->productDetails($params[2], $params[3]);
+                break;
+        }
         break;
     case 'backoffice':
-        $authController->showBackoffice();
-        switch($params[1]){
+        switch($params[1] ?? ""){
+            case '':
+                $authController->showBackoffice();
+                break;
             case 'productos':
-                $productController = new ProductController();
-                $productController->showBackofficeProducts();
+                switch($params[2] ?? ""){
+                    case'':
+                        $productController = new ProductController();
+                        $productController->showBackofficeProducts();
+                        break;
+                    case 'detalle':
+                        $productController = new ProductController();
+                        $productController->productDetails($params[3], $params[4]);
+                    break;
+                }
                 break;
             case 'categorias':
                 $categoryController = new CategoryController();
@@ -63,9 +85,7 @@ switch($params[0]){
         }
         break;
     case 'product-details':
-        $productController = new ProductController();
-        $productController->productDetails($params[1], $params[2]);
-        break;
+        
     case 'newProduct':
         $productController = new ProductController();
         $productController->newProduct();
@@ -85,10 +105,6 @@ switch($params[0]){
     case 'deleteProduct':
         $productController = new ProductController();
         $productController->deleteProduct($params[1]);
-        break;
-    case 'showCategories':
-        $categoryController = new CategoryController();
-        $categoryController->showCategories();
         break;
     case 'productsByCategory':
         $productController = new ProductController();

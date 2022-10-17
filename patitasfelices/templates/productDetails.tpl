@@ -10,8 +10,8 @@
         <li>Tamaño: {$product->size}</li>
         <li>Precio: {$product->price}</li>
         <li>Stock: {$product->stock}</li>
-        <li>Categoría: {$product->category_fk}</li>
-        <li>Tipo de producto: {$product->type_fk}</li>
+        <li>Categoría: {$product->category_name}</li>
+        <li>Tipo de producto: {$product->type_name}</li>
     </ul>
 </div>
 
