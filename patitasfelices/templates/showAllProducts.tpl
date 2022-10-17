@@ -28,10 +28,10 @@
 				<td>{$product->size}</td>
 				<td>{$product->price}</td>
 				<td>{$product->stock}</td>
-				<td>{$product->category_fk}</td>
-				<td>{$product->type_fk}</td>
+				<td>{$product->category_name}</td>
+				<td>{$product->type_name}</td>
 				<td>{$product->image}</td>
-				<td><button><a href="productDetails/{$product->id_product}/{$product->name}"> VER EL PRODUCTO </a></button></td>
+				<td><button><a href="product-details/{$product->id_product}/{$product->name}"> VER EL PRODUCTO </a></button></td>
 			</tr>
 		{/foreach}
 	</tbody>

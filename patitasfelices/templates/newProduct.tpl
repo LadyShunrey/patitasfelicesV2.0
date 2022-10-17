@@ -21,7 +21,7 @@
         <div class="col-3">
             <div class="form-group">
                 <label>Categoría a la que pertenece</label>
-                <select name="category_fk" class="form-control">
+                <select name="category_fk" class="form-control"> {*agregar foreach*}
                     <option value="1">Accesorios</option>
                     <option value="2">Librería</option>
                     <option value="3">Bazar</option>
@@ -31,7 +31,7 @@
         <div class="col-3">
             <div class="form-group">
                 <label>Tipo de producto</label>
-                <select name="type_fk" class="form-control">
+                <select name="type_fk" class="form-control"> {*agregar foreach*}
                     <option value="1">Bandanas</option>
                     <option value="2">Cartucheras</option>
                     <option value="3">Llaveros</option>

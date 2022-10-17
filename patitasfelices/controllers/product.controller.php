@@ -1,20 +1,33 @@
 <?php
 
-include_once('models/patitastienda.model.php');
-include_once('views/patitastienda.view.php');
+require_once('models/product.model.php');
+require_once('views/product.view.php');
+require_once('helpers/auth.helper.php');
 
-class StoreController{
+class ProductController{
     
     private $model;
     private $view;
+    private $authHelper;
 
     public function __construct(){
-        $this->model = new StoreModel();
-        $this->view = new StoreView();
+        $this->model = new ProductModel();
+        $this->view = new ProductView();
+        $this->authHelper = new AuthHelper();
     }
 
     public function showHome(){
         $this->view->showHome();
+    }
+
+    public function showBackofficeProducts(){
+        //verificar que esté loggueado
+        $this->authHelper->checkLoggedIn();
+
+        $products = $this->model->getAllProducts();
+        
+        
+        $this->view->showBackofficeProducts($products);
     }
 
     public function showAllProducts(){
@@ -26,13 +39,6 @@ class StoreController{
         $product = $this->model->getProduct($id);
         
         $this->view->productDetails($product, $name);
-    }
-
-    public function showAdminTable(){
-        $products = $this->model->getAllProducts();
-        $categories = $this->model->getAllCategories();
-        $types = $this->model->getAllTypes();
-        $this->view->showAdminTable($products, $categories, $types);
     }
 
     public function newProduct(){
@@ -51,7 +57,7 @@ class StoreController{
 
         $this->model->addProduct($name, $description, $color, $size, $price, $stock, $category_fk, $type_fk);
 
-        $this->showAdminTable();
+        $this->showBackofficeProducts();
     }
 
     public function editProduct($id){
@@ -75,12 +81,7 @@ class StoreController{
 
     public function deleteProduct($id){
         $product = $this->model->deleteProduct($id);
-        $this->showAdminTable();
-    }
-
-    public function showCategories(){
-        $categories = $this->model->getAllCategories();
-        $this->view->showCategories($categories);
+        $this->showBackofficeProducts();
     }
 
     public function productsByCategory($id_category){
@@ -88,53 +89,4 @@ class StoreController{
         $this->view->showAllProducts($products);
     }
 
-    public function newCategory(){
-        $this->view->newCategory();
-    }
-
-    public function addCategory(){
-        $category_name = $_REQUEST['category_name'];
-        $this->model->addCategory($category_name);
-
-        $this->showAdminTable();
-    }
-
-    public function editCategory($id_category){
-        $category = $this->model->getCategory($id_category);
-        $this->view->editCategory($category);
-    }
-
-    public function editCategoryOnDB($id_category){
-        $category_name = $_REQUEST['category_name'];
-
-        $this->model->editCategory($id_category, $category_name);
-        $this->editCategory($id_category);
-    }
-
-    public function deleteCategory(){
-
-    }
-
-    public function newType(){
-        $this->view->newType();
-    }
-
-    public function addType(){
-        $type_name = $_REQUEST['type_name'];
-        $this->model->addType($type_name);
-
-        $this->showAdminTable();
-    }
-
-    public function editType($id_type){
-        $type = $this->model->getType($id_type);
-        $this->view->editType($type);
-    }
-
-    public function editTypeOnDB($id_type){
-        $type_name = $_REQUEST['type_name'];
-
-        $this->model->editType($id_type, $type_name);
-        $this->editType($id_type);
-    }
 }

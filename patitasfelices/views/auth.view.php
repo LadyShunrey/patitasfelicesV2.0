@@ -16,4 +16,8 @@ class AuthView{
     // function showError(){
     //     $this->smary->display('Acceso denegado');
     // }
+
+    function showBackoffice(){
+        $this->smarty->display('templates/backoffice.tpl');
+    }
 }
