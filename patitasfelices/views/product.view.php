@@ -24,7 +24,9 @@ class ProductView{
         $this->smarty->display('templates/backofficeProducts.tpl');
     }
 
-    function newProduct(){
+    function newProduct($categories, $types){
+        $this->smarty->assign('categories', $categories);
+        $this->smarty->assign('types', $types);
         $this->smarty->display('templates/newProduct.tpl');
     }
 

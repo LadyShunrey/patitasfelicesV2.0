@@ -42,7 +42,11 @@ class ProductController{
     }
 
     public function newProduct(){
-        $this->view->newProduct();
+        $modelCategory = new CategoryModel();
+        $modelType = new TypeModel();
+        $categories = $modelCategory->getAllCategories();
+        $types = $modelType->getAllTypes();
+        $this->view->newProduct($categories, $types);
     }
 
     public function addProduct(){
@@ -80,7 +84,7 @@ class ProductController{
     }
 
     public function deleteProduct($id){
-        $product = $this->model->deleteProduct($id);
+        $this->model->deleteProduct($id);
         $this->showBackofficeProducts();
     }
 

@@ -5,7 +5,7 @@
 
 <h1>Estos son todas las CATEGORÍAS de la tienda </h1>
 
-<td><button><a href="newCategory"> AGREGAR UNA CATEGORÍA NUEVA! </a></button></td>
+<td><button><a href="backoffice-new-category"> AGREGAR UNA CATEGORÍA NUEVA! </a></button></td>
 <table class="table">
 	<thead>
 		<tr>

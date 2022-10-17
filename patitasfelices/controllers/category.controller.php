@@ -54,7 +54,8 @@ class CategoryController{
         $this->editCategory($id_category);
     }
 
-    public function deleteCategory(){
-
+    public function deleteCategory($id_category){
+        $this->model->deleteCategory($id_category);
+        $this->showBackofficeCategories();
     }
 }

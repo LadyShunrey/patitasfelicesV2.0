@@ -32,4 +32,9 @@ class TypeModel{
         $query = $this->db->prepare('UPDATE type SET type_name = ? WHERE type.id_type = ?');
         $query->execute([$type_name, $id_type]);
     }
+
+    function deleteType($id_type){
+        $query = $this->db->prepare('DELETE FROM `type` WHERE `type`.`id_type` = ?');
+        $query->execute([$id_type]);
+    }
 }

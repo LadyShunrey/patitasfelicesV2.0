@@ -39,9 +39,9 @@
             <div class="form-group">
                 <label>Categoría a la que pertenece</label>
                 <select name="category_fk" class="form-control" value="{$product->category_fk}">
-                    <option value="1">Accesorios</option>
-                    <option value="2">Librería</option>
-                    <option value="3">Bazar</option>
+                    {foreach from=$categories item=$category}
+                        <option value="{$category->id_category}">{$category->category_name}</option>
+                    {{/foreach}}
                 </select>
             </div>
         </div>

@@ -37,7 +37,7 @@
 				<td>{$product->type_name}</td>
 				<td>{$product->image}</td>
 				<td><button><a href="editProduct/{$product->id_product}"> EDITAR </a></button> --- <button type="button" class="btn btn -primary btn-danger" data-bs-toggle="modal" data-bs-target="#deleteProduct">BORRAR</button></td>
-				<td><button><a href="productDetails/{$product->id_product}"> VER EL PRODUCTO </a></button></td>
+				<td><button><a href="product-details/{$product->id_product}"> VER EL PRODUCTO </a></button></td>
 			</tr>
 		{/foreach}
 	</tbody>

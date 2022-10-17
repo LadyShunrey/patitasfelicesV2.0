@@ -45,4 +45,8 @@ class TypeController{
         $this->editType($id_type);
     }
 
+    public function deleteType($id_type){
+        $this->model->deleteType($id_type);
+        $this->showBackofficeTypes();
+    }
 }

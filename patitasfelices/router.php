@@ -92,7 +92,7 @@ switch($params[0]){
         $productController = new ProductController();
         $productController->productsByCategory($params[1]);
         break;
-    case 'newCategory':
+    case 'backoffice-new-category':
         $categoryController = new CategoryController();
         $categoryController->newCategory();
         break;

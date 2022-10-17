@@ -21,29 +21,20 @@
         <div class="col-3">
             <div class="form-group">
                 <label>Categoría a la que pertenece</label>
-                <select name="category_fk" class="form-control"> {*agregar foreach*}
-                    <option value="1">Accesorios</option>
-                    <option value="2">Librería</option>
-                    <option value="3">Bazar</option>
+                <select name="category_fk" class="form-control">
+                    {foreach from=$categories item=$category}
+                        <option value="{$category->id_category}">{$category->category_name}</option>
+                    {{/foreach}}
                 </select>
             </div>
         </div>
         <div class="col-3">
             <div class="form-group">
                 <label>Tipo de producto</label>
-                <select name="type_fk" class="form-control"> {*agregar foreach*}
-                    <option value="1">Bandanas</option>
-                    <option value="2">Cartucheras</option>
-                    <option value="3">Llaveros</option>
-                    <option value="4">Anotadores</option>
-                    <option value="5">Calendarios</option>
-                    <option value="6">Cuadernos</option>
-                    <option value="7">Lápices</option>
-                    <option value="8">Lapiceras</option>
-                    <option value="9">Bolsos</option>
-                    <option value="10">Tazas</option>
-                    <option value="11">Remeras</option>
-                    <option value="12">Billeteras</option>
+                <select name="type_fk" class="form-control">
+                    {foreach from=$types item=$type}
+                        <option value="{$type->id_type}">{$type->type_name}</option>
+                    {{/foreach}}
                 </select>
             </div>
         </div>
@@ -86,6 +77,6 @@
     <button type="submit" class="btn btn-primary mt-2">Guardar</button>
 </form>
 
-<button><a href="home"> VOLVER </a></button>
+<button><a href="backoffice-productos"> VOLVER </a></button>
 
 {include file="templates/footer.tpl"}
