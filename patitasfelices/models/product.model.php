@@ -21,16 +21,41 @@ class ProductModel{
         return $product;
     }
 
-    function addProduct($name, $description, $color, $size, $price, $stock, $category_fk, $type_fk){
-        $query = $this->db->prepare('INSERT INTO product(name, description, color, size, price, stock, category_fk, type_fk) VALUES(?, ?, ?, ?, ?, ?, ?, ?)');
-        $query->execute([$name, $description, $color, $size, $price, $stock, $category_fk, $type_fk]);
+    function addProduct($name, $description, $color, $size, $price, $stock, $category_fk, $type_fk, $image = null){
+        $pathImg = null;
+
+        if($image){
+            $pathImg = $this->uploadImage($image);
+        }
+
+        $query = $this->db->prepare('INSERT INTO product(name, description, color, size, price, stock, category_fk, type_fk, image) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        $query->execute([$name, $description, $color, $size, $price, $stock, $category_fk, $type_fk, $pathImg]);
+
+        // else{
+        //     $query = $this->db->prepare('INSERT INTO product(name, description, color, size, price, stock, category_fk, type_fk) VALUES(?, ?, ?, ?, ?, ?, ?, ?)');
+        //     $query->execute([$name, $description, $color, $size, $price, $stock, $category_fk, $type_fk]);
+        // }
 
         return $this->db->lastInsertId();
     }
 
-    function editProduct($id, $name, $description, $color, $size, $price, $stock, $category_fk, $type_fk){
-        $query = $this->db->prepare('UPDATE product SET name = ?, description = ?, color = ?, size = ?, price = ?, stock = ?, category_fk = ?, type_fk = ? WHERE product.id_product = ?');
-        $query->execute([$name, $description, $color, $size, $price, $stock, $category_fk, $type_fk, $id]);
+    private function uploadImage($image){
+        $target = 'img/products/' . uniqid("",true) . '.' . strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
+
+
+        move_uploaded_file($image, $target);
+        return $target;
+    }
+
+    function editProduct($id, $name, $description, $color, $size, $price, $stock, $category_fk, $type_fk, $image = null){
+        $pathImg = null;
+
+        if($image){
+            $pathImg = $this->uploadImage($image);
+        }
+
+        $query = $this->db->prepare('UPDATE product SET name = ?, description = ?, color = ?, size = ?, price = ?, stock = ?, category_fk = ?, type_fk = ?, image = ? WHERE product.id_product = ?');
+        $query->execute([$name, $description, $color, $size, $price, $stock, $category_fk, $type_fk, $pathImg, $id]);
 
     }
 

@@ -29,7 +29,7 @@
 				<td>{$product->stock}</td>
 				<td>{$product->category_name}</td>
 				<td>{$product->type_name}</td>
-				<td><img src="images/{$product->image}" alt=""></td>
+				<td><img src="images/products/{$product->image}" alt=""></td>
 				<td><button><a href="tienda/product/{$product->id_product}/{$product->name}"> VER EL PRODUCTO </a></button></td>
 			</tr>
 		{/foreach}

@@ -4,6 +4,7 @@
 
 <div class="container">
     <ul>
+        <img src="images/products/{$product->image}" alt="">
         <li>Nombre: {$product->name}</li>
         <li>Descripción: {$product->description}</li>
         <li>Color: {$product->color}</li>

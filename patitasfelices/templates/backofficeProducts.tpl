@@ -36,8 +36,8 @@
 				<td>{$product->stock}</td>
 				<td>{$product->category_name}</td>
 				<td>{$product->type_name}</td>
-				<td>{$product->image}</td>
-				<td><button><a href="editProduct/{$product->id_product}"> EDITAR </a></button> --- <button type="button" class="btn btn -primary btn-danger" data-bs-toggle="modal" data-bs-target="#deleteProduct">BORRAR</button></td>
+				<td> <img src="{$product->image}" alt=""></td>
+				<td><button><a href="backoffice/productos/editar/{$product->id_product}"> EDITAR </a></button> --- <button type="button" class="btn btn -primary btn-danger" data-bs-toggle="modal" data-bs-target="#deleteProduct">BORRAR</button></td>
 				<td><button><a href="backoffice/productos/detalle/{$product->id_product}/{$product->name}"> VER EL PRODUCTO </a></button></td>
 			</tr>
 		{/foreach}

@@ -63,8 +63,17 @@ class ProductController{
         $category_fk = $_REQUEST['category_fk'];
         $type_fk = $_REQUEST['type_fk'];
 
+        if($_FILES["image"]["name"]){
+            
+            // $_FILES['image']['type'] == "image/jpg" ||
+            // $_FILES['image']['type'] == "image/jpeg" ||
+            // $_FILES['image']['type'] == "image/png")){
 
-        $this->model->addProduct($name, $description, $color, $size, $price, $stock, $category_fk, $type_fk);
+            $this->model->addProduct($name, $description, $color, $size, $price, $stock, $category_fk, $type_fk, $_FILES['image']['tmp_name']);
+        }
+        else{
+            $this->model->addProduct($name, $description, $color, $size, $price, $stock, $category_fk, $type_fk);
+        }  
 
         $this->showBackofficeProducts();
     }
@@ -90,7 +99,17 @@ class ProductController{
         $category_fk = $_REQUEST['category_fk'];
         $type_fk = $_REQUEST['type_fk'];
 
-        $this->model->editProduct($id, $name, $description, $color, $size, $price, $stock, $category_fk, $type_fk);
+        if($_FILES["image"]["name"]){
+            
+            // $_FILES['image']['type'] == "image/jpg" ||
+            // $_FILES['image']['type'] == "image/jpeg" ||
+            // $_FILES['image']['type'] == "image/png")){
+
+            $this->model->editProduct($id, $name, $description, $color, $size, $price, $stock, $category_fk, $type_fk, $_FILES['image']['tmp_name']);
+        }
+        else{
+            $this->model->editProduct($id, $name, $description, $color, $size, $price, $stock, $category_fk, $type_fk);
+        } 
         $this->editProduct($id);
     }
 

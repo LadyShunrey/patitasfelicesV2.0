@@ -72,11 +72,11 @@
     <input type="checkbox" name="completada" id="completada">
 
     <label>AGREGAR UNA IMAGEN</label>
-    <input type="file" name="image" id="imageToUpload">
+    <input type="file" name="image" id="image">
 
     <button type="submit" class="btn btn-primary mt-2">Guardar</button>
 </form>
 
-<button><a href="backoffice-productos"> VOLVER </a></button>
+<button><a href="backoffice/productos"> VOLVER </a></button>
 
 {include file="templates/footer.tpl"}

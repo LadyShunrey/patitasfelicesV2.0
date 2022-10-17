@@ -7,6 +7,7 @@
 <div class="container">
     <h4>Datos actuales del producto: </h4>
     <ul>
+        <li><img src="{$product->image}" alt=""></li>
         <li>ID: {$product->id_product}</li>
         <li>Nombre: {$product->name}</li>
         <li>Descripción: {$product->description}</li>
@@ -88,7 +89,7 @@
     <label for="">Este es un checkbox no sé para qué</label>
     <input type="checkbox" name="completada" id="completada">
 
-    <label>AGREGAR UNA IMAGEN</label>
+    <label>CAMBIAR LA IMAGEN QUE ESTÁ</label>
     <input type="file" name="image" id="image">
 
     <button type="submit" class="btn btn-primary mt-2">Guardar</button>

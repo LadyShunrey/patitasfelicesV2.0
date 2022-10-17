@@ -71,7 +71,11 @@ switch($params[0]){
                     case 'detalle':
                         $productController = new ProductController();
                         $productController->productDetails($params[3], $params[4]);
-                    break;
+                        break;
+                    case 'editar':
+                        $productController = new ProductController();
+                        $productController->editProduct($params[3]);
+                        break;
                 }
                 break;
             case 'categorias':
@@ -83,9 +87,7 @@ switch($params[0]){
                 $typeController->showBackofficeTypes();
                 break;
         }
-        break;
-    case 'product-details':
-        
+        break; 
     case 'newProduct':
         $productController = new ProductController();
         $productController->newProduct();
@@ -93,11 +95,7 @@ switch($params[0]){
     case 'addProduct':
         $productController = new ProductController();
         $productController->addProduct();
-        break;
-    case 'editProduct':
-        $productController = new ProductController();
-        $productController->editProduct($params[1]);
-        break;
+        break;   
     case 'editProductOnDB':
         $productController = new ProductController();
         $productController->editProductOnDB($params[1]);

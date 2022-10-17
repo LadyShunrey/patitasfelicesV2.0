@@ -6,6 +6,7 @@ class AuthHelper{
         if (session_status() != PHP_SESSION_ACTIVE) {
             session_start();
         }  
+        session_abort();
     }
 
     public function checkLoggedIn(){
@@ -15,5 +16,6 @@ class AuthHelper{
             header("Location: " . LOGIN);
             die();
         }
+        session_abort();
     }
 }
