@@ -12,6 +12,7 @@
                         <li class="nav-item mb-2"><a href="backoffice" class="nav-link p-0 text-muted">Area de Gestión</a></li>
                     {else}
                         <li class="nav-item mb-2"><a href="login" class="nav-link p-0 text-muted">Login</a></li>
+                        <a class="nav-link active" aria-current="page" href="logout">{($smarty.session.USER_NAME)} Logout</a>
                     {/if}
                 </ul>
             </div>
