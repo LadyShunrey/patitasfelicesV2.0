@@ -18,7 +18,8 @@
 		{foreach from=$categories item=$category}
 			<tr>
 				<th scope="row">{$category->category_name}</th>
-				<td><button><a href="backoffice/categorias/editar/{$category->id_category}"> EDITAR </a></button> --- <button type="button" class="btn btn -primary btn-danger" data-bs-toggle="modal" data-bs-target="#borrar">BORRAR</button>
+				<td><button><a href="backoffice/categorias/editar/{$category->id_category}"> EDITAR </a></button> --- <button type="button" class="btn btn-primary btn-danger"><a
+                href='deleteCategory/{$category->id_category}'> BORRAR </a></button>
 				<td><button><a href="backoffice/categorias/productos/{$category->id_category}"> Ver productos de esta categoría </a></button></td>
 			</tr>
 		{/foreach}
@@ -28,9 +29,10 @@
 <button><a href="backoffice"> VOLVER </a></button>
 
 {* <!-- Button trigger modal -->
+<button type="button" class="btn btn -primary btn-danger" data-bs-toggle="modal" data-bs-target="#borrar">BORRAR</button>
 <button type="button" class="btn btn -primary btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">BORRAR</button> *}
 
-<!-- Modal -->
+{* <!-- Modal -->
 <div class="modal fade" id="borrar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -48,6 +50,6 @@
       </div>
     </div>
   </div>
-</div>
+</div> *}
 
 {include file="templates/footer.tpl"}

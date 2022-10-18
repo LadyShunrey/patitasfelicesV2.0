@@ -20,7 +20,8 @@
 		{foreach from=$types item=$type}
 			<tr>
 				<th scope="row">{$type->type_name}</th>
-				<td><button><a href="backoffice/tipos/editar/{$type->id_type}"> EDITAR </a></button> --- <button type="button" class="btn btn -primary btn-danger" data-bs-toggle="modal" data-bs-target="#borrar">BORRAR</button>
+				<td><button><a href="backoffice/tipos/editar/{$type->id_type}"> EDITAR </a></button> --- <button type="button" class="btn btn-primary btn-danger"><a
+                href='deleteType/{$type->id_type}'> BORRAR </a></button>
 				<td><button><a href="backoffice/tipos/productos/{$type->id_type}"> Ver productos de este tipo </a></button></td>
 			</tr>
 		{/foreach}
@@ -33,7 +34,7 @@
 <button type="button" class="btn btn -primary btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">BORRAR</button> *}
 
 <!-- Modal -->
-<div class="modal fade" id="borrar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{* <div class="modal fade" id="borrar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -50,6 +51,6 @@
       </div>
     </div>
   </div>
-</div>
+</div> *}
 
 {include file="templates/footer.tpl"}
