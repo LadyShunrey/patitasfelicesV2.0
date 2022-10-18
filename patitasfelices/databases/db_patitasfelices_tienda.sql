@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2022 a las 03:53:05
+-- Tiempo de generación: 18-10-2022 a las 04:02:05
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -70,12 +70,12 @@ INSERT INTO `product` (`id_product`, `name`, `description`, `color`, `size`, `pr
 (3, 'Llavero huella casita', NULL, 'Fucsia', NULL, 300, 120, 1, 3, 'images/products/llavero-casita.jpg'),
 (4, 'Pizarra con imán', 'Incluye un fibrón borrable!', NULL, NULL, 850, 30, 2, 4, 'images/products/pizarra.jpg'),
 (5, 'Últimos calendarios del 2022!', NULL, NULL, NULL, 300, 5, 2, 5, 'images/products/calendario.jpg'),
-(6, 'Cuaderno rayado', NULL, NULL, NULL, NULL, 35, 2, 6, ''),
-(7, 'Lápiz con grabado láser', NULL, NULL, NULL, 200, 60, 2, 7, ''),
-(8, 'Lapicera con grabado láser', NULL, NULL, NULL, 300, 75, 2, 8, ''),
-(9, 'Neceser', NULL, NULL, NULL, 800, 15, 1, 9, ''),
-(10, 'Mini morral', NULL, NULL, NULL, 2000, 10, 1, 9, ''),
-(12, 'Llavero amor peludo', NULL, NULL, NULL, 450, 80, 1, 3, '');
+(6, 'Cuaderno rayado', NULL, NULL, NULL, NULL, 35, 2, 6, 'images/products/cuaderno.jpg'),
+(7, 'Lápiz con grabado láser', NULL, NULL, NULL, 200, 60, 2, 7, 'images/products/lapices.jpg'),
+(8, 'Lapicera con grabado láser', NULL, NULL, NULL, 300, 75, 2, 8, 'images/products/lapicera.jpg'),
+(9, 'Neceser', NULL, NULL, NULL, 800, 15, 1, 9, 'images/products/neceser.jpg'),
+(10, 'Mini morral', NULL, NULL, NULL, 2000, 10, 1, 9, 'images/products/minimorral.jpg'),
+(12, 'Llavero amor peludo', NULL, NULL, NULL, 450, 80, 1, 3, 'images/products/llaveropeludo.jpg');
 
 -- --------------------------------------------------------
 
