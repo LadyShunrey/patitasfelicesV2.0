@@ -6,7 +6,7 @@
 
 <h1>Esta es el area de GESTION de todos los PRODUCTOS de la tienda </h1>
 
-<td><button><a href="newProduct"> AGREGAR UN PRODUCTO NUEVO! </a></button></td>
+<td><button><a href="backoffice/productos/nuevo"> AGREGAR UN PRODUCTO NUEVO! </a></button></td>
 
 <table class="table">
 	<thead>

@@ -48,8 +48,16 @@ switch($params[0]){
                 $productController->showAllProducts();
                 break;
             case 'categorias':
-                $categoryController = new CategoryController();
-                $categoryController->showCategories();
+                switch($params[2] ?? ""){
+                    case'':
+                        $categoryController = new CategoryController();
+                        $categoryController->showCategories();
+                        break;
+                    case 'productos':
+                        $productController = new ProductController();
+                        $productController->productsByCategory($params[3]);
+                        break;
+                }
                 break;
             case 'product':
                 $productController = new ProductController();
@@ -76,26 +84,54 @@ switch($params[0]){
                         $productController = new ProductController();
                         $productController->editProduct($params[3]);
                         break;
+                    case'nuevo':
+                        $productController = new ProductController();
+                        $productController->newProduct();
+                        break;
                 }
                 break;
             case 'categorias':
-                $categoryController = new CategoryController();
-                $categoryController->showBackofficeCategories();
+                switch($params[2] ?? ""){
+                    case'':
+                        $categoryController = new CategoryController();
+                        $categoryController->showBackofficeCategories();
+                        break;
+                    case'productos':
+                        $productController = new ProductController();
+                        $productController->productsByCategory($params[3]);
+                        break;
+                    case'nueva':
+                        $categoryController = new CategoryController();
+                        $categoryController->newCategory();
+                        break;
+                    case 'editar':
+                        $categoryController = new CategoryController();
+                        $categoryController->editCategory($params[3]);
+                        break;
+                }
                 break;
             case 'tipos':
-                $typeController = new TypeController();
-                $typeController->showBackofficeTypes();
+                switch($params[2] ?? ""){
+                    case'':
+                        $typeController = new TypeController();
+                        $typeController->showBackofficeTypes();
+                        break;
+                    case 'nuevo':
+                        $typeController = new TypeController();
+                        $typeController->newType();
+                        break;
+                    case'editar':
+                        $typeController = new TypeController();
+                        $typeController->editType($params[3]);
+                        break;
+                }
                 break;
         }
-        break; 
-    case 'newProduct':
-        $productController = new ProductController();
-        $productController->newProduct();
         break;
     case 'addProduct':
         $productController = new ProductController();
         $productController->addProduct();
-        break;   
+        break;        
     case 'editProductOnDB':
         $productController = new ProductController();
         $productController->editProductOnDB($params[1]);
@@ -104,21 +140,9 @@ switch($params[0]){
         $productController = new ProductController();
         $productController->deleteProduct($params[1]);
         break;
-    case 'productsByCategory':
-        $productController = new ProductController();
-        $productController->productsByCategory($params[1]);
-        break;
-    case 'backoffice-new-category':
-        $categoryController = new CategoryController();
-        $categoryController->newCategory();
-        break;
     case 'addCategory':
         $categoryController = new CategoryController();
         $categoryController->addCategory();
-        break;
-    case 'editCategory':
-        $categoryController = new CategoryController();
-        $categoryController->editCategory($params[1]);
         break;
     case 'editCategoryOnDB':
         $categoryController = new CategoryController();
@@ -128,17 +152,9 @@ switch($params[0]){
         $categoryController = new CategoryController();
         $categoryController->deleteCategory($params[1]);
         break;
-    case 'newType':
-        $typeController = new TypeController();
-        $typeController->newType();
-        break;
     case 'addType':
         $typeController = new TypeController();
         $typeController->addType();
-        break;
-    case 'editType':
-        $typeController = new TypeController();
-        $typeController->editType($params[1]);
         break;
     case 'editTypeOnDB':
         $typeController = new TypeController();

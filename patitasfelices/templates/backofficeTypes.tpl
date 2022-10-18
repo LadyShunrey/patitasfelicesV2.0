@@ -8,7 +8,7 @@
 
 <h2>Todos los tipos de productos de nuestra tienda </h2>
 
-<td><button><a href="newType"> AGREGAR UN NUEVO TIPO DE PRODUCTO! </a></button></td>
+<td><button><a href="backoffice/tipos/nuevo"> AGREGAR UN NUEVO TIPO DE PRODUCTO! </a></button></td>
 <table class="table">
 	<thead>
 		<tr>
@@ -20,7 +20,7 @@
 		{foreach from=$types item=$type}
 			<tr>
 				<th scope="row">{$type->type_name}</th>
-				<td><button><a href="editType/{$type->id_type}"> EDITAR </a></button> --- <button type="button" class="btn btn -primary btn-danger" data-bs-toggle="modal" data-bs-target="#borrar">BORRAR</button>
+				<td><button><a href="backoffice/tipos/editar/{$type->id_type}"> EDITAR </a></button> --- <button type="button" class="btn btn -primary btn-danger" data-bs-toggle="modal" data-bs-target="#borrar">BORRAR</button>
 				<td><button><a href="productsByType/{$type->id_type}"> Ver productos de este tipo </a></button></td>
 			</tr>
 		{/foreach}

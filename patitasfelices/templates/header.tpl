@@ -35,8 +35,8 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="tienda">Productos</a></li>
-                            <li><a class="dropdown-item" href="showCategories">Categorías</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="tienda/categorias">Categorías</a></li>
+                            {* <li><a class="dropdown-item" href="#">Something else here</a></li> *}
                         </ul>
                     </li>
                     <li class="nav-item">

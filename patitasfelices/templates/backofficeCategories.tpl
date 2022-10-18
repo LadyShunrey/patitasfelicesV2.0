@@ -6,7 +6,7 @@
 
 <h1>Esta es el area de GESTION de todas las CATEGORÍAS de la tienda </h1>
 
-<td><button><a href="backoffice-new-category"> AGREGAR UNA CATEGORÍA NUEVA! </a></button></td>
+<td><button><a href="backoffice/categorias/nueva"> AGREGAR UNA CATEGORÍA NUEVA! </a></button></td>
 <table class="table">
 	<thead>
 		<tr>
@@ -18,8 +18,8 @@
 		{foreach from=$categories item=$category}
 			<tr>
 				<th scope="row">{$category->category_name}</th>
-				<td><button><a href="editCategory/{$category->id_category}"> EDITAR </a></button> --- <button type="button" class="btn btn -primary btn-danger" data-bs-toggle="modal" data-bs-target="#borrar">BORRAR</button>
-				<td><button><a href="productsByCategory/{$category->id_category}"> Ver productos de esta categoría </a></button></td>
+				<td><button><a href="backoffice/categorias/editar/{$category->id_category}"> EDITAR </a></button> --- <button type="button" class="btn btn -primary btn-danger" data-bs-toggle="modal" data-bs-target="#borrar">BORRAR</button>
+				<td><button><a href="backoffice/categorias/productos/{$category->id_category}"> Ver productos de esta categoría </a></button></td>
 			</tr>
 		{/foreach}
 	</tbody>

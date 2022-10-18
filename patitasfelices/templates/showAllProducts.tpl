@@ -4,6 +4,8 @@
 
 <h1>Estos son todos nuestros productos!</h1>
 
+<button><a href="tienda/categorias"> Ver todas las categorías </a></button>
+
 <table class="table">
 	<thead>
 		<tr>
@@ -29,14 +31,12 @@
 				<td>{$product->stock}</td>
 				<td>{$product->category_name}</td>
 				<td>{$product->type_name}</td>
-				<td><img src="images/products/{$product->image}" alt=""></td>
+				<td><img src="{$product->image}" alt=""></td>
 				<td><button><a href="tienda/product/{$product->id_product}/{$product->name}"> VER EL PRODUCTO </a></button></td>
 			</tr>
 		{/foreach}
 	</tbody>
 </table>
-
-<button><a href="tienda/categorias"> Ver todas las categorías </a></button>
 
 <button><a href="home"> VOLVER </a></button>
 

@@ -4,7 +4,7 @@
 
 <div class="container">
     <ul>
-        <img src="images/products/{$product->image}" alt="">
+        <img src="{$product->image}" alt="">
         <li>Nombre: {$product->name}</li>
         <li>Descripción: {$product->description}</li>
         <li>Color: {$product->color}</li>
@@ -18,6 +18,7 @@
 
 <h4> Holis que tal soy el detalle </h4>
 <button><a href="tienda"> VOLVER </a></button>
-<button><a href="backoffice"> VOLVER a la tabla admin </a></button>
-
+{if isset($smarty.session.USER_ID)}
+    <button><a href="backoffice"> VOLVER a la tabla admin </a></button>
+{/if}
 {include file="templates/footer.tpl"}

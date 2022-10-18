@@ -14,6 +14,6 @@
     <button type="submit" class="btn btn-primary mt-2">Guardar</button>
 </form>
 
-<button><a href="adminTable"> VOLVER </a></button>
+<button><a href="backoffice/tipos"> VOLVER </a></button>
 
 {include file="templates/footer.tpl"}

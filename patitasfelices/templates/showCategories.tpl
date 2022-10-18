@@ -13,14 +13,19 @@
 			<tr>
 				<th scope="row">{$category->category_name}</th>
 				
-				<td><button><a href="productsByCategory/{$category->id_category}"> Ver productos de esta categoría </a></button></td>
+				{if isset($smarty.session.USER_ID)}
+					<td><button><a href="backoffice/categorias/productos/{$category->id_category}"> Ver productos de esta categoría </a></button></td>
+				{else}
+					<td><button><a href="tienda/categorias/productos/{$category->id_category}"> Ver productos de esta categoría </a></button></td>
+				{/if}
 			</tr>
 		{/foreach}
 	</tbody>
 </table>
-
-<button><a href="showCategories"> Ver todas las categorías </a></button>
-
-<button><a href="tienda"> VOLVER </a></button>
+{if isset($smarty.session.USER_ID)}
+	<button><a href="backoffice"> VOLVER </a></button>
+{else}
+	<button><a href="tienda"> VOLVER </a></button>
+{/if}
 
 {include file="templates/footer.tpl"}
