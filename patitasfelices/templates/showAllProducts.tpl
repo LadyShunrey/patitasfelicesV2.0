@@ -4,10 +4,10 @@
 
 <h1>Estos son todos nuestros productos!</h1>
 
-<button><a href="tienda/categorias"> Ver todas las categorías </a></button>
-<button><a href="tienda/tipos"> Ver todos los tipos de producto disponible </a></button>
+<a class="btn btn-primary" href="tienda/categorias"> Ver todas las categorías </a>
+<a class="btn btn-primary" href="tienda/tipos"> Ver todos los tipos de producto disponible </a>
 
-<table class="table">
+<table class="table table-striped">
 	<thead>
 		<tr>
 			<th scope="col">Nombre</th>
@@ -33,12 +33,12 @@
 				<td>{$product->category_name}</td>
 				<td>{$product->type_name}</td>
 				<td><img class="img-fluid" width="200" src="{$product->image}" alt=""></td>
-				<td><button><a href="tienda/product/{$product->id_product}/{$product->name}"> VER EL PRODUCTO </a></button></td>
+				<td><a class="btn btn-secondary" href="tienda/product/{$product->id_product}/{$product->name}"> VER EL PRODUCTO </a></td>
 			</tr>
 		{/foreach}
 	</tbody>
 </table>
 
-<button><a href="home"> VOLVER </a></button>
+<a class="btn btn-primary" href="home"> VOLVER </a>
 
 {include file="templates/footer.tpl"}

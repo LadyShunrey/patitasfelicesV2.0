@@ -1,4 +1,5 @@
 {include file="templates/header.tpl"}
+<div class="flex-shrink-0">
 <h2>Login</h2>
 <form method="POST" action="login">
     <input type="text" id="user_name" name="user_name" placeholder="Ingrese su usuario..." />
@@ -10,5 +11,5 @@
             {$error}
         </div>
     {/if}
-
+    </div>
 {include file="templates/footer.tpl"}

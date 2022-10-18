@@ -1,8 +1,8 @@
 {include file="templates/header.tpl"}
 
-<button><a href="backoffice">Volver el panel de administrador</a></button>
-<button><a href="backoffice/productos">PRODUCTOS</a></button>
-<button><a href="backoffice/categorias">CATEGORÍAS</a></button>
+<a class="btn btn-primary" href="backoffice">Volver el panel de administrador</a>
+<a class="btn btn-primary" href="backoffice/productos">PRODUCTOS</a>
+<a class="btn btn-primary" href="backoffice/categorias">CATEGORÍAS</a>
 
 <h1>Gestion de todos los TIPOS DE PRODUCTOS de la tienda </h1>
 

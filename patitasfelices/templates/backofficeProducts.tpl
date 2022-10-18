@@ -1,12 +1,12 @@
 {include file="templates/header.tpl"}
+<a class="btn btn-primary" href="backoffice">Volver el panel de administrador</a>
+<a class="btn btn-primary" href="backoffice/categorias">CATEGORÍAS</a>
+<a class="btn btn-primary" href="backoffice/tipos">TIPOS</a>
 
-<button><a href="backoffice">Volver el panel de administrador</a></button>
-<button><a href="backoffice/categorias">CATEGORÍAS</a></button>
-<button><a href="backoffice/tipos">TIPOS</a></button>
 
 <h1>Esta es el area de GESTION de todos los PRODUCTOS de la tienda </h1>
 
-<td><button><a href="backoffice/productos/nuevo"> AGREGAR UN PRODUCTO NUEVO! </a></button></td>
+<td><a class="btn btn-success" href="backoffice/productos/nuevo"> AGREGAR UN PRODUCTO NUEVO! </a></td>
 
 <table class="table">
     <thead>
@@ -37,10 +37,14 @@
                 <td>{$product->category_name}</td>
                 <td>{$product->type_name}</td>
                 <td> <img class="img-fluid" width="200" src="{$product->image}" alt=""></td>
-                <td><button><a href="backoffice/productos/editar/{$product->id_product}"> EDITAR </a></button> --- <button type="button" class="btn btn-primary btn-danger"><a
-                href='deleteProduct/{$product->id_product}'> BORRAR </a></button>
-                <td><button><a href="backoffice/productos/detalle/{$product->id_product}/{$product->name}"> VER EL PRODUCTO
-                        </a></button></td>
+                <td>
+                    <div class="d-flex">
+                
+                <a class="btn btn-info" href="backoffice/productos/editar/{$product->id_product}"> EDITAR </a> --- <a
+                class="btn btn-primary btn-danger" href='deleteProduct/{$product->id_product}'> BORRAR </a></td>
+                </div>
+                <td><a class="btn btn-secondary" href="backoffice/productos/detalle/{$product->id_product}/{$product->name}"> VER EL PRODUCTO
+                        </a></td>
 
                 
 
