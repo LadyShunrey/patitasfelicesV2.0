@@ -8,7 +8,11 @@
                 <ul class="nav flex-column">
                     <li class="nav-item mb-2"><a href="home" class="nav-link p-0 text-muted">Home</a></li>
                     <li class="nav-item mb-2"><a href="tienda" class="nav-link p-0 text-muted">Tienda</a></li>
-                    <li class="nav-item mb-2"><a href="login" class="nav-link p-0 text-muted">Login</a></li>
+                    {if isset($smarty.session.USER_ID)}
+                        <li class="nav-item mb-2"><a href="backoffice" class="nav-link p-0 text-muted">Area de Gestión</a></li>
+                    {else}
+                        <li class="nav-item mb-2"><a href="login" class="nav-link p-0 text-muted">Login</a></li>
+                    {/if}
                 </ul>
             </div>
             <div class="col-md-5 offset-md-1 mb-3">

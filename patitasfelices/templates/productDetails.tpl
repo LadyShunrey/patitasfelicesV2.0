@@ -1,14 +1,14 @@
 {include file="templates/header.tpl"}
 
 <h2>{$product->name} </h2>
-<div class="card" style= "width:400px">
+<div class="card" style="width:400px">
     <img class="card-img-top" src="{$product->image}" alt="">
     <div class="card-body">
         <div class="card-title">
             {* {$product->name} *}
         </div>
         <div class="card-text">
-        <ul>
+            <ul>
                 <li>Nombre: {$product->name}</li>
                 <li>Descripción: {$product->description}</li>
                 <li>Color: {$product->color}</li>
@@ -17,7 +17,7 @@
                 <li>Stock: {$product->stock}</li>
                 <li>Categoría: {$product->category_name}</li>
                 <li>Tipo de producto: {$product->type_name}</li>
-    </ul> 
+            </ul>
         </div>
 
     </div>
