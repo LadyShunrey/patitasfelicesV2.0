@@ -12,7 +12,7 @@
 </head>
 
 <body class="d-flex flex-column h-100">
-    <nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-light {if isset($smarty.session.USER_ID)} navbar-dark bg-dark {/if}">
         <div class="container-fluid">
             <a class="navbar-brand" href="home">
                 <img src="images/logo_relleno.png" alt="Logo" width="30" height="24"
@@ -36,7 +36,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="tienda">Productos</a></li>
                             <li><a class="dropdown-item" href="tienda/categorias">Categorías</a></li>
-                            {* <li><a class="dropdown-item" href="#">Something else here</a></li> *}
+                            <li><a class="dropdown-item" href="tienda/tipos">Tipos de productos</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
