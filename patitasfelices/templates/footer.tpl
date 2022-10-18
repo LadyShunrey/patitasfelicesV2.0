@@ -10,9 +10,10 @@
                     <li class="nav-item mb-2"><a href="tienda" class="nav-link p-0 text-muted">Tienda</a></li>
                     {if isset($smarty.session.USER_ID)}
                         <li class="nav-item mb-2"><a href="backoffice" class="nav-link p-0 text-muted">Area de Gestión</a></li>
+                        <li class="nav-item mb-2"><a href="logout" class="nav-link p-0 text-muted">{($smarty.session.USER_NAME)} Logout</a></li>
                     {else}
                         <li class="nav-item mb-2"><a href="login" class="nav-link p-0 text-muted">Login</a></li>
-                        <a class="nav-link active" aria-current="page" href="logout">{($smarty.session.USER_NAME)} Logout</a>
+                        
                     {/if}
                 </ul>
             </div>
