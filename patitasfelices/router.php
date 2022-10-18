@@ -63,6 +63,18 @@ switch($params[0]){
                 $productController = new ProductController();
                 $productController->productDetails($params[2], $params[3]);
                 break;
+            case 'tipos':
+                switch($params[2] ?? ""){
+                    case'':
+                        $typeController = new TypeController();
+                        $typeController->showTypes();
+                        break;
+                    case'productos':
+                        $productController = new ProductController();
+                        $productController->productsByType($params[3]);
+                        break;
+                }
+                break;
         }
         break;
     case 'backoffice':
@@ -123,6 +135,10 @@ switch($params[0]){
                     case'editar':
                         $typeController = new TypeController();
                         $typeController->editType($params[3]);
+                        break;
+                    case'productos':
+                        $productController = new ProductController();
+                        $productController->productsByType($params[3]);
                         break;
                 }
                 break;

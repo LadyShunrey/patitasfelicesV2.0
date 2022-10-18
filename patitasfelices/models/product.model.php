@@ -70,4 +70,10 @@ class ProductModel{
         $products = $query->fetchAll(PDO::FETCH_OBJ);
         return $products;
     }
+    function getProductByType($id_type){
+        $query = $this->db->prepare('SELECT id_product, name, description, category_name, type_name, color, size, price, stock, image FROM product, category, type WHERE (category_fk= id_category AND type_fk=id_type) AND (type_fk=?)');
+        $query->execute([$id_type]);
+        $products = $query->fetchAll(PDO::FETCH_OBJ);
+        return $products;
+    }
 }

@@ -22,6 +22,11 @@ class TypeController{
         $this->view->showBackofficeTypes($types);
     }
 
+    public function showTypes(){
+        $types = $this->model->getAllTypes();
+        $this->view->showTypes($types);
+    } 
+
     public function newType(){
         $this->authHelper->checkLoggedIn();
         $this->view->newType();

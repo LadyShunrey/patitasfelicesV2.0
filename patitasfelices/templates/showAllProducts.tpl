@@ -5,6 +5,7 @@
 <h1>Estos son todos nuestros productos!</h1>
 
 <button><a href="tienda/categorias"> Ver todas las categorías </a></button>
+<button><a href="tienda/tipos"> Ver todos los tipos de producto disponible </a></button>
 
 <table class="table">
 	<thead>

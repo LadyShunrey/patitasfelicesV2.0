@@ -124,4 +124,9 @@ class ProductController{
         $this->view->showAllProducts($products);
     }
 
+    public function productsByType($id_type){
+        $products = $this->model->getProductByType($id_type);
+        $this->view->showAllProducts($products);
+    }
+
 }

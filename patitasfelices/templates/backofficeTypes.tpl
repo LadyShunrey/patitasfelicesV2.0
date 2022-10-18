@@ -21,7 +21,7 @@
 			<tr>
 				<th scope="row">{$type->type_name}</th>
 				<td><button><a href="backoffice/tipos/editar/{$type->id_type}"> EDITAR </a></button> --- <button type="button" class="btn btn -primary btn-danger" data-bs-toggle="modal" data-bs-target="#borrar">BORRAR</button>
-				<td><button><a href="productsByType/{$type->id_type}"> Ver productos de este tipo </a></button></td>
+				<td><button><a href="backoffice/tipos/productos/{$type->id_type}"> Ver productos de este tipo </a></button></td>
 			</tr>
 		{/foreach}
 	</tbody>

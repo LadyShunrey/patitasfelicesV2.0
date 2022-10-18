@@ -20,6 +20,11 @@ class TypeView{
         $this->smarty->display('templates/showAllProducts.tpl');
     }
 
+    function showTypes($types){
+        $this->smarty->assign('types', $types);
+        $this->smarty->display('templates/showTypes.tpl');
+    }
+
     public function newType(){
         $this->smarty->display('templates/newType.tpl');
     }
